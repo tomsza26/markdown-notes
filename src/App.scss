@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap');
+
+$firstColor: #fce77d;
+$secondColor: #f96167;
+
+* {
+	font-family: 'Nunito', sans-serif;
+	background: $firstColor;
+	color: $secondColor;
+}
+
+::-moz-selection {
+	color: $firstColor;
+	background: $secondColor;
+}
+
+::selection {
+	color: $firstColor;
+	background: $secondColor;
+}
+
+#bigNotesContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	max-width: 400px;
+	margin: 50px auto 0 auto;
+
+	form {
+		width: 100%;
+
+		header {
+			font-weight: 700;
+			text-align: right;
+
+			#react-color {
+				color: #61dafb;
+			}
+
+			#redux-color {
+				color: #764abc;
+			}
+
+			#react-color,
+			#redux-color,
+			#dash {
+				margin: 0;
+				display: inline-block;
+			}
+
+			#mark-header {
+				font-size: 40px;
+				margin: 0;
+			}
+		}
+
+		p {
+			font-size: 24px;
+			margin: 0 0 2px 0;
+			text-align: right;
+			font-weight: 600;
+		}
+
+		button {
+			display: block;
+			margin: 5px 0 0 auto;
+			border: 3px solid $secondColor;
+			font-size: 17px;
+			font-weight: 800;
+			cursor: pointer;
+			transition: 0.5s;
+		}
+
+		button:hover {
+			color: $firstColor;
+			background: $secondColor;
+		}
+
+		textarea {
+			outline: none;
+			box-sizing: border-box;
+			width: 100%;
+			min-height: 100px;
+			border: 3px solid $secondColor;
+			padding: 5px;
+			resize: vertical;
+		}
+	}
+
+	#notesContainer {
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+
+		.todoItem {
+			box-sizing: border-box;
+			margin: 20px 0;
+			width: 100%;
+			border: 3px solid $secondColor;
+			padding-bottom: 5px;
+
+			.noteTextCont {
+				.data {
+					text-align: left;
+					font-weight: 700;
+					font-size: 18px;
+					margin: 0;
+					color: $firstColor;
+					background: $secondColor;
+					padding: 3px;
+
+					#trash {
+						display: inline-block;
+						text-align: right;
+						margin: 3px 5px 0 15px;
+						font-size: 17px;
+						font-weight: 800;
+						cursor: pointer;
+						color: $firstColor;
+						background: $secondColor;
+						float: right;
+
+						path {
+							color: $firstColor;
+						}
+					}
+				}
+
+				.noteBefore {
+					display: block;
+					border: 2.5px solid $secondColor;
+					padding: 5px;
+					box-sizing: border-box;
+					text-align: right;
+					font-size: 20px;
+					font-weight: 600;
+					word-wrap: break-word;
+					margin: 20px 5px;
+				}
+
+				.noteTextArea {
+					outline: none;
+					box-sizing: border-box;
+					min-height: 100px;
+					border: 2.5px solid $secondColor;
+					padding: 5px;
+					resize: vertical;
+					font-size: 18px;
+					margin: 5px 5px 0 5px;
+					width: 97.5%;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 415px) {
+	#bigNotesContainer {
+		margin: 10px;
+		max-width: 100%;
+	}
+}
+
+@media screen and (max-width: 325px) {
+	#bigNotesContainer {
+		#notesContainer {
+			.todoItem {
+				.noteTextCont {
+					.data {
+						min-height: 50px;
+					}
+				}
+			}
+		}
+	}
+}
